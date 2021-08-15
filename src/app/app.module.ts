@@ -9,12 +9,19 @@ import { MatIconModule } from '@angular/material/icon';
 import { FooterComponent } from './footer/footer.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { MatMenuModule } from '@angular/material/menu';
+import { AppRoutingModule } from './app-routing.module';
+import { HomeComponent } from './home/home.component';
+import { MatGridList, MatGridListModule } from '@angular/material/grid-list';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { BigButtonComponent } from './big-button/big-button.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    HomeComponent,
+    BigButtonComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +29,10 @@ import { MatMenuModule } from '@angular/material/menu';
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
-    MatMenuModule
+    MatMenuModule,
+    AppRoutingModule,
+    MatGridListModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

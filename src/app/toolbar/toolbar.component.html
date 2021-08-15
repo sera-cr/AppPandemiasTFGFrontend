@@ -1,25 +1,26 @@
-<mat-toolbar color="primary">
+<mat-toolbar color="primary" layout="fill">
     <button mat-icon-button [matMenuTriggerFor]="menu" class="menu-icon-button" aria-label="menu-button">
         <mat-icon>menu</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
         <button mat-menu-item>
-            <mat-icon color="primary">map</mat-icon>
+            <mat-icon color="primary" class="blue-icon material-icons-outlined">map</mat-icon>
             <span class="blue-text">Regions</span>
         </button>
         <button mat-menu-item>
-            <mat-icon color="primary">category</mat-icon>
+            <mat-icon color="primary" class="material-icons-outlined">category</mat-icon>
             <span class="blue-text">Categories</span>
         </button>
         <button mat-menu-item>
-            <mat-icon color="primary">info</mat-icon>
+            <mat-icon color="primary" class="material-icons-outlined">info</mat-icon>
             <span class="blue-text">Information</span>
         </button>
         <button mat-menu-item>
-            <mat-icon color="primary">explore</mat-icon>
+            <mat-icon color="primary" class="material-icons-outlined">explore</mat-icon>
             <span class="blue-text">Travel Route</span>
         </button>
     </mat-menu>
     <span>
-        <a href="">PRIv</a> | {{ section }} </span>
+        <a href="">PRIv</a> | {{ section }}
+    </span>
 </mat-toolbar>
