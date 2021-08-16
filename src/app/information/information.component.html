@@ -1,0 +1,27 @@
+<div class="container">
+    <div fxFlex fxLayout="column" fxLayout.xs="column" fxLayoutAlign="space-between stretch">
+        <div fxFlex="none">
+            <app-toolbar section="Information"></app-toolbar>
+        </div>
+        <div fxLayoutAlign="start center" fxLayout="column" [style.paddingTop.px]="'80'">
+            <div class="blue-text information-prevention">
+                Information and Prevention measures
+            </div>
+        </div>
+        <!-- Todo: Spinner cuando carga ventanas -->
+        <div fxLayout="row wrap" fxLayoutAlign="center center" [style.paddingLeft.px]="'20'" [style.paddingTop.px]="'80'" [style.paddingBottom.px]="'80'">
+            <div fxFlex="25%" *ngFor="let inf of information">
+                <app-information-card
+                    iconName="{{ inf.iconName }}"
+                    title="{{ inf.title }}"
+                    subtitle="{{ inf.subtitle }}"
+                    imgUrl="{{ inf.imgUrl }}"
+                    content="{{ inf.content }}">
+                </app-information-card>
+            </div>
+        </div>
+        <div fxFlex="none">
+            <app-footer></app-footer>
+        </div>
+    </div>
+</div>

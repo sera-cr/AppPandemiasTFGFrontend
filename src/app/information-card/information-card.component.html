@@ -1,0 +1,10 @@
+<mat-card class="information-card" (click)="openDialog()">
+    <mat-card-header>
+        <div mat-card-avatar>
+          <mat-icon aria-hidden="false" class="blue-icon material-icons-outlined">{{ iconName }}</mat-icon>
+        </div>
+      <mat-card-title class="blue-text">{{ title }}</mat-card-title>
+      <mat-card-subtitle>{{ subtitle }}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="{{ imgUrl }}">
+</mat-card>

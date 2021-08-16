@@ -1,0 +1,20 @@
+@use 'sass:map'
+@import '~@angular/material/theming'
+
+mat-card
+    margin-right: 5px
+    margin-left: 10px
+    background-color: white
+
+mat-card:hover
+    background-color: map.get($mat-indigo, 200)
+    transition: 0.6s
+    cursor: pointer
+
+mat-icon
+    width: 50px
+    height: 50px
+    font-size: 50px
+
+.information-card
+  max-width: 400px

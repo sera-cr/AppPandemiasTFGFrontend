@@ -11,9 +11,15 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
-import { MatGridList, MatGridListModule } from '@angular/material/grid-list';
+import { MatGridListModule } from '@angular/material/grid-list';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BigButtonComponent } from './big-button/big-button.component';
+import { InformationComponent } from './information/information.component';
+import { MatCardModule } from '@angular/material/card';
+import { InformationCardComponent } from './information-card/information-card.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { InformationDialogComponent } from './information-dialog/information-dialog.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,7 +27,10 @@ import { BigButtonComponent } from './big-button/big-button.component';
     FooterComponent,
     ToolbarComponent,
     HomeComponent,
-    BigButtonComponent
+    BigButtonComponent,
+    InformationComponent,
+    InformationCardComponent,
+    InformationDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +41,10 @@ import { BigButtonComponent } from './big-button/big-button.component';
     MatMenuModule,
     AppRoutingModule,
     MatGridListModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatCardModule,
+    MatDialogModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -8,17 +8,17 @@
                 Choose section
             </div>
         </div>
-        <mat-card fxFlex fxLayoutAlign="center center" fxLayout="row" class="solution" [style.borderRadius.px]="'0'" [style.paddingTop.px]="'-120'">
+        <div fxFlex fxLayoutAlign="center center" fxLayout="row" [style.borderRadius.px]="'0'" [style.paddingTop.px]="'-120'">
             <span class="spacer"></span>
             <app-big-button></app-big-button>
             <span class="spacer"></span>
             <app-big-button name="Categories" icon="category"></app-big-button>
             <span class="spacer"></span>
-            <app-big-button name="Information" icon="info"></app-big-button>
+            <app-big-button name="Information" icon="info" routerLink="/information"></app-big-button>
             <span class="spacer"></span>
             <app-big-button name="Travel Route" icon="explore"></app-big-button>
             <span class="spacer"></span>
-        </mat-card>
+        </div>
         <div fxFlex="none">
             <app-footer></app-footer>
         </div>
