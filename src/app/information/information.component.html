@@ -7,9 +7,11 @@
             <div class="blue-text information-prevention">
                 Informaci&oacute;n y Medidas de prevenci&oacute;n
             </div>
+            <div class="secondary-text information-explanation">
+                Pulse cada tarjeta para ver m&aacute;s informaci&oacute;n
+            </div>
         </div>
-        <!-- Todo: Spinner cuando carga ventanas -->
-        <div fxLayout="row wrap" fxLayoutAlign="center center" [style.paddingLeft.px]="'20'" [style.paddingTop.px]="'80'" [style.paddingBottom.px]="'80'">
+        <div fxLayout="row wrap" fxLayoutGap="80" fxLayoutAlign="center center" [style.paddingLeft.px]="'20'" [style.paddingRight.px]="'10'" [style.paddingTop.px]="'40'" [style.paddingBottom.px]="'80'">
             <div fxFlex="25%" *ngFor="let inf of information">
                 <app-information-card
                     iconName="{{ inf.iconName }}"

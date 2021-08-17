@@ -20,6 +20,7 @@ import { InformationCardComponent } from './information-card/information-card.co
 import { MatDialogModule } from '@angular/material/dialog';
 import { InformationDialogComponent } from './information-dialog/information-dialog.component';
 import { HttpClientModule } from '@angular/common/http';
+import { TravelRouteComponent } from './travel-route/travel-route.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { HttpClientModule } from '@angular/common/http';
     BigButtonComponent,
     InformationComponent,
     InformationCardComponent,
-    InformationDialogComponent
+    InformationDialogComponent,
+    TravelRouteComponent
   ],
   imports: [
     BrowserModule,

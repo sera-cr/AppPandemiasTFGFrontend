@@ -1,4 +1,6 @@
+@use 'sass:map'
 @import './scss/_variables.scss'
+@import '~@angular/material/theming'
 
 body
     font-family: Lato
@@ -11,6 +13,10 @@ a
 .blue-text
     font-weight: bold
     color: $secondary-color
+
+.secondary-text
+    font-weight: bold
+    color: map.get($mat-indigo, 200)
 
 .blue-icon
     color: $secondary-color
