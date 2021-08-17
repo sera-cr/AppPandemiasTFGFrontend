@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ToolbarComponent implements OnInit {
 
   @Input()
-  section: string = "Home"
+  section: string = "Inicio"
 
   constructor() { }
 

@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class BigButtonComponent implements OnInit {
 
   @Input()
-  name: string = "Regions"
+  name: string = "Regiones"
 
   @Input()
   icon: string = "map"
