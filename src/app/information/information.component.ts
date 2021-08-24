@@ -15,7 +15,6 @@ export class InformationComponent implements OnInit {
 
   ngOnInit(): void {
     this.getInformation();
-    console.log(this.information);
   }
 
   getInformation(): void {

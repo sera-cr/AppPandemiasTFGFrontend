@@ -21,7 +21,10 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { InformationDialogComponent } from './information-dialog/information-dialog.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TravelRouteComponent } from './travel-route/travel-route.component';
-
+import { MatSelectModule } from '@angular/material/select';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatListModule } from '@angular/material/list';
+import { MatExpansionModule } from '@angular/material/expansion';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +49,12 @@ import { TravelRouteComponent } from './travel-route/travel-route.component';
     FlexLayoutModule,
     MatCardModule,
     MatDialogModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSelectModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatListModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]
