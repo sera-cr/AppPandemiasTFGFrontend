@@ -162,7 +162,6 @@ export class TravelRouteComponent implements OnInit {
       });
       this.selectedRestrictions[comunidad.id] = restrictions;
     });
-    console.log(this.selectedRestrictions);
   }
 
   get comunidad() { return this.form.get('comunidad') }

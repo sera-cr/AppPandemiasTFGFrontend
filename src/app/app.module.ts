@@ -25,6 +25,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatListModule } from '@angular/material/list';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { CategoriesComponent } from './categories/categories.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +36,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
     InformationComponent,
     InformationCardComponent,
     InformationDialogComponent,
-    TravelRouteComponent
+    TravelRouteComponent,
+    CategoriesComponent
   ],
   imports: [
     BrowserModule,

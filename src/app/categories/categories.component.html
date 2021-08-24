@@ -1,0 +1,53 @@
+<div class="container">
+    <div fxFlex fxLayout="column" fxLayout.xs="column" fxLayoutAlign="space-between stretch">
+        <div fxFlex="none">
+            <app-toolbar section="Categorias"></app-toolbar>
+        </div>
+        <div fxFlex fxLayout="column" fxLayoutAlign="start center" class="inside-flex" [style.paddingTop.px]="'80'">
+            <div class="blue-text selection-categories" [style.paddingTop.px]="'20'">
+                Restricciones por categor&iacute;as
+            </div>
+            <div class="secondary-text categories-explanation" [style.paddingTop.px]="'60'">
+                Seleccione una Categor&iacute;a para ver todas las restricciones de esta para todas las comunidades aut&oacute;nomas
+            </div>
+            <div fxLayout="column" fxLayoutAlign="start center" [style.paddingTop.px]="'40'" [style.paddingBottom.px]="'50'">
+                <div class="action-buttons">
+                    <button mat-button (click)="accordion.openAll()">
+                        <div class="blue-text">
+                            Abrir todos
+                        </div>
+                    </button>
+                    <button mat-button (click)="accordion.closeAll()">
+                        <div class="blue-text">
+                            Contraer todos
+                        </div>
+                    </button>
+                </div>
+                <mat-accordion class="headers-align" multi>
+                    <div >
+                        <mat-expansion-panel>
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    <div class="blue-text">
+                                        A
+                                    </div>
+                                </mat-panel-title>
+                                <mat-panel-description>
+                                    Haga click para ver las restricciones
+                                    <mat-icon>category</mat-icon>
+                                </mat-panel-description>
+                            </mat-expansion-panel-header>
+                            <div *ngFor="let res of restricciones">
+                                <b>B</b><br>
+                                C<br><br>
+                            </div>
+                        </mat-expansion-panel>
+                    </div>
+                </mat-accordion>
+            </div>
+        </div>
+        <div fxFlex="none">
+            <app-footer></app-footer>
+        </div>
+    </div>
+</div>
