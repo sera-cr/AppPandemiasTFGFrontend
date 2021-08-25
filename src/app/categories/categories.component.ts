@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatAccordion } from '@angular/material/expansion';
-import { CategoriesService } from '../categories.service';
 import { Category } from '../interfaces/category';
 import { Comunidad, ComunidadRestriccion, Restriccion } from '../interfaces/travel';
+import { TravelService } from '../travel.service';
 
 @Component({
   selector: 'app-categories',
@@ -16,7 +16,10 @@ export class CategoriesComponent implements OnInit {
   comunidades: Comunidad[] = [];
   restricciones: Restriccion[] = [];
   comunidadRestricciones: ComunidadRestriccion[] = [];
-  catRestric: Restriccion[] = [];
+
+  comunidadRestrictions: {} = {};
+
+  restrictionsLoaded = false;
 
   categories: Category[] = [
     {
@@ -45,7 +48,7 @@ export class CategoriesComponent implements OnInit {
     }
   ];
 
-  constructor(private categoriesService: CategoriesService) { }
+  constructor(private travelService: TravelService) { }
 
   ngOnInit(): void {
     this.getComunidades();
@@ -54,7 +57,7 @@ export class CategoriesComponent implements OnInit {
   }
 
   getComunidades(): void {
-    this.categoriesService.getComunidades()
+    this.travelService.getComunidades()
         .subscribe(comunidades => {
           comunidades.forEach(value => {
             this.comunidades.push({
@@ -66,7 +69,7 @@ export class CategoriesComponent implements OnInit {
   }
 
   getRestricciones(): void {
-    this.categoriesService.getRestricciones()
+    this.travelService.getRestricciones()
         .subscribe(restricciones => {
           restricciones.forEach(value => {
             this.restricciones.push({
@@ -80,7 +83,7 @@ export class CategoriesComponent implements OnInit {
   }
 
   getComunidadRestriccion(): void {
-    this.categoriesService.getComunidadRestriccion()
+    this.travelService.getComunidadRestriccion()
         .subscribe(comres => {
           comres.forEach(value => {
             this.comunidadRestricciones.push({
@@ -89,5 +92,23 @@ export class CategoriesComponent implements OnInit {
             })
           });
         });
+  }
+
+  getRestriccionComunidad() {
+    if (!this.restrictionsLoaded) {
+      this.comunidades.forEach(comunidad => {
+        var restrictions = [];
+        this.comunidadRestricciones.forEach(comres => {
+          if (comres.comunidad_id == comunidad.id) {
+            restrictions.push(
+              this.restricciones.find(element => {
+                return element.id == comres.restriccion_id
+              })
+            );
+          }
+        });
+        this.comunidadRestrictions[comunidad.id] = restrictions;
+      });
+    }
   }
 }

@@ -24,12 +24,12 @@
                     </button>
                 </div>
                 <mat-accordion class="headers-align" multi>
-                    <div >
-                        <mat-expansion-panel>
+                    <div *ngFor="let cat of categories">
+                        <mat-expansion-panel (click)="getRestriccionComunidad()">
                             <mat-expansion-panel-header>
                                 <mat-panel-title>
                                     <div class="blue-text">
-                                        A
+                                        {{ cat.name }}
                                     </div>
                                 </mat-panel-title>
                                 <mat-panel-description>
@@ -37,9 +37,13 @@
                                     <mat-icon>category</mat-icon>
                                 </mat-panel-description>
                             </mat-expansion-panel-header>
-                            <div *ngFor="let res of restricciones">
-                                <b>B</b><br>
-                                C<br><br>
+                            <div *ngFor="let com of comunidades">
+                                <b>{{ com.name }}</b><br>
+                                <div *ngFor="let res of comunidadRestrictions[com.id]">
+                                    <div *ngIf="res.category == cat.identifier">
+                                        {{ res.information }}
+                                    </div>
+                                </div><br><br>
                             </div>
                         </mat-expansion-panel>
                     </div>
