@@ -26,6 +26,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatListModule } from '@angular/material/list';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { CategoriesComponent } from './categories/categories.component';
+import { RegionsComponent } from './regions/regions.component';
+import { MatTableModule } from '@angular/material/table';
+import { MapComponent } from './map/map.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +41,9 @@ import { CategoriesComponent } from './categories/categories.component';
     InformationCardComponent,
     InformationDialogComponent,
     TravelRouteComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    RegionsComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +62,8 @@ import { CategoriesComponent } from './categories/categories.component';
     FormsModule,
     ReactiveFormsModule,
     MatListModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

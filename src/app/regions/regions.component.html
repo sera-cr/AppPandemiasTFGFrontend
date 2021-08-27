@@ -1,0 +1,64 @@
+<div class="container">
+    <div fxFlex fxLayout="column" fxLayout.xs="column" fxLayoutAlign="space-between stretch">
+        <div fxFlex="none">
+            <app-toolbar section="Regiones"></app-toolbar>
+        </div>
+        <div fxFlex fxLayout="column" fxLayoutAlign="start center" class="inside-flex" [style.paddingTop.px]="'80'">
+            <div class="blue-text region-restrictions" [style.paddingTop.px]="'20'">
+                Restricciones por regiones
+            </div>
+            <div class="secondary-text regions-explanation" [style.paddingTop.px]="'60'">
+                Seleccione una Comunidad Aut&oacute;noma en el desplegable.
+            </div>
+            <div class="secondary-text regions-explanation" [style.paddingTop.px]="'30'">
+                Debajo puede observar un mapa de las comunidades aut&oacute;nomas.
+            </div>
+            <div fxLayout="row" fxLayoutAlign="start center" [style.paddingTop.px]="'35'">
+                <mat-form-field appearance="fill" class="comunidades-field">
+                    <mat-label>Comunidad Aut&oacute;noma</mat-label>
+                    <mat-select [(value)]="comunidad" (selectionChange)="comunidadChange(comunidad)">
+                      <mat-option>-- Ninguna --</mat-option>
+                      <mat-option *ngFor="let com of comunidades" [value]="com">
+                        {{ com.name }}
+                      </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div #target fxLayout="row" fxLayoutAlign="start center" [style.paddingTop.px]="'35'" >
+                <div *ngIf="selectedRestricciones.length > 0">
+                    <div class="secondary-text regions-explanation" [style.paddingBottom.px]="'20'">
+                        Comunidad selecionada: {{ comunidad.name }}
+                    </div>
+                    <table mat-table #table [dataSource]="selectedRestricciones" class="mat-elevation-z8">
+                        <!--- Note that these columns can be defined in any order.
+                                The actual rendered columns are set as a property on the row definition" -->
+                        
+                        <ng-container matColumnDef="id">
+                            <th mat-header-cell *matHeaderCellDef> ID </th>
+                            <td mat-cell *matCellDef="let res"> {{ res.id }} </td>
+                        </ng-container>
+                        
+                        <ng-container matColumnDef="information">
+                            <th mat-header-cell *matHeaderCellDef> Informaci&oacute;n </th>
+                            <td mat-cell *matCellDef="let res"> {{ res.information }} </td>
+                        </ng-container>
+                        
+                        <ng-container matColumnDef="category">
+                            <th mat-header-cell *matHeaderCellDef> Categor&iacute;a </th>
+                            <td mat-cell *matCellDef="let res"> {{ categories[res.category] }} </td>
+                        </ng-container>
+                        
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                        <tr mat-row *matRowDef="let rowData; columns: displayedColumns;"></tr>
+                    </table>
+                </div>                
+            </div>
+            <div fxLayout="row" fxLayoutAlign="start center" [style.paddingTop.px]="'10'" [style.paddingBottom.px]="'35'">
+                <app-map class="map"></app-map>
+            </div>
+        </div>
+        <div fxFlex="none">
+            <app-footer></app-footer>
+        </div>
+    </div>
+</div>
