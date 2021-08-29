@@ -35,8 +35,7 @@ export class TravelRouteComponent implements OnInit {
     'm': 'Movilidad',
     'r': 'Reuniones',
     'o': 'Ocio',
-    'h': 'Hosteleria',
-    'v': 'Viaje'
+    'h': 'Hosteleria'
   }
 
   constructor(private travelService: TravelService, private fb: FormBuilder) { }

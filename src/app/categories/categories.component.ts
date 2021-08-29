@@ -41,10 +41,6 @@ export class CategoriesComponent implements OnInit {
     {
       identifier: 'h',
       name: 'Hosteleria'
-    },
-    {
-      identifier: 'v',
-      name: 'Viaje'
     }
   ];
 
